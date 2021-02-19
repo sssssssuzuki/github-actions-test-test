@@ -155,3 +155,6 @@ $RECYCLE.BIN/
 .vscode/
 lib/
 include
+
+*.zip
+*.tar.gz
