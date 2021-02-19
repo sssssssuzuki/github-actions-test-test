@@ -1,0 +1,10 @@
+README.md
+setup.py
+pygatt/__init__.py
+pygatt/nativemethods.py
+pygatt/test.py
+pygatt.egg-info/PKG-INFO
+pygatt.egg-info/SOURCES.txt
+pygatt.egg-info/dependency_links.txt
+pygatt.egg-info/requires.txt
+pygatt.egg-info/top_level.txt
