@@ -38,7 +38,7 @@ elif PLATFORM == 'Darwin':
     BIN_EXT = '.dylib'
     ARCHIVE_EXT = '.tar.gz'
     TARGET_OS = 'macos'
-    ARCH = 'x64'
+    ARCH = 'universal'
 elif PLATFORM == 'Linux':
     PREFIX = 'lib'
     BIN_EXT = '.so'
@@ -104,9 +104,10 @@ def load_latest_binary(version):
 
     for file in glob.glob(os.path.join(os.path.dirname(__file__), 'bin', '*')):
         if file.endswith(BIN_EXT):
-            # try:
-            os.remove(file)
-            # catch Exce:
+            try:
+                os.remove(file)
+            except Exception:
+                print(f'Warning: cannot delete old binary ({file})')
 
     download_bin(version)
 
