@@ -59,7 +59,7 @@ else:
 
 __all__ = ['sayhello']
 
-__version__ = '0.2.2'
+__version__ = '0.2.3'
 LIB_PATH = os.path.join(os.path.dirname(__file__), 'bin', f'{PREFIX}sayhellocapi_{__version__}{BIN_EXT}')
 
 
