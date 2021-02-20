@@ -99,14 +99,21 @@ def load_latest_binary(version):
     if os.path.exists(LIB_PATH):
         return
 
+    print(f'Cannot find  {LIB_PATH}.')
+    print('Downloading latest binaries...')
+
     for file in glob.glob(os.path.join(os.path.dirname(__file__), 'bin', '*')):
-        os.remove(file)
+        if file.endswith(BIN_EXT):
+            # try:
+            os.remove(file)
+            # catch Exce:
 
     download_bin(version)
 
     for file in glob.glob(os.path.join(os.path.dirname(__file__), 'bin', '*')):
         if file.endswith(BIN_EXT):
             os.rename(file, file.replace(BIN_EXT, f'_{version}{BIN_EXT}'))
+    print('Done')
 
 
 load_latest_binary(__version__)
