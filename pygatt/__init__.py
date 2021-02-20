@@ -68,10 +68,10 @@ def download_bin(version):
     _Version = 'v' + '.'.join(version.split('.')[0:3])
     _Version = _Version.strip()
 
-    module_path = './pygatt/'
     url = f'{_AssetsBaseURL}{_Version}/sayhello-{_Version}-{TARGET_OS}-{ARCH}{ARCHIVE_EXT}'
 
-    tmp_archive_path = module_path + 'tmp' + ARCHIVE_EXT
+    module_path = os.path.dirname(__file__)
+    tmp_archive_path = os.path.join(module_path, 'tmp' + ARCHIVE_EXT)
 
     res = requests.get(url, stream=True)
     with open(tmp_archive_path, 'wb') as fp:
